@@ -1,0 +1,112 @@
+PHP7 Fundamentals
+
+* New Features 
+
+
+
+    Improved performance − Having PHPNG code merged in PHP7, it is twice as fast as PHP 5.
+
+    Lower Memory Consumption − Optimized PHP 7 utilizes lesser resource.
+
+    Scalar type declarations − Now parameter and return types can be enforced.
+
+    Consistent 64-bit support − Consistent support for 64-bit architecture machines.
+
+    Improved Exception hierarchy − Exception hierarchy is improved.
+
+    Many fatal errors converted to Exceptions − Range of exceptions is increased covering many fatal error converted as exceptions.
+
+    Secure random number generator − Addition of new secure random number generator API.
+
+    Deprecated SAPIs and extensions removed − Various old and unsupported SAPIs and extensions are removed from the latest version.
+
+    The null coalescing operator (??) − New null coalescing operator added.
+
+    Return and Scalar Type Declarations − Support for return type and parameter type added.
+
+    Anonymous Classes − Support for anonymous added.
+
+    Zero cost asserts − Support for zero cost assert added.
+
+
+
+
+
+* Scaler type declaration 
+
+    coercive - coercive is default mode and need not to be specified.
+
+    strict - strict mode has to explicitly hinted.
+
+	   declare(strict_types=1);
+
+	   function sum(int ...$ints) {
+	      return array_sum($ints);
+	   }
+	   print(sum(2, '3', 4.1));
+
+
+
+
+
+* Return Type declaration 
+
+
+   declare(strict_types = 1);
+   function returnIntValue(int $value): int {
+      return $value + 1.0;
+   }
+
+   print(returnIntValue(5));
+
+
+
+
+* PHP 7 - Null Coalescing Operator
+	
+   // Chaining ?? operation
+   $username = $_GET['username'] ?? $_POST['username'] ?? 'not passed';
+   print($username);	
+
+
+
+* PHP 7 - Spaceship Operator
+
+In PHP 7, a new feature, spaceship operator has been introduced. It is used to compare two expressions. It returns -1, 0 or 1 when first expression is respectively less than, equal to, or greater than second expression.   
+
+
+   //string comparison
+   print( "a" <=> "a");print("<br/>");
+   print( "a" <=> "b");print("<br/>");
+   print( "b" <=> "a");print("<br/>");
+
+   0
+	-1
+		1
+
+
+
+* PHP 7 - Constant Arrays
+
+Array constants can now be defined using the define() function. In PHP 5.6, they could only be defined using const keyword.
+
+
+
+   define('animals', [
+      'dog',
+      'cat',
+      'bird'
+   ]);
+   print(animals[1]); //cat
+
+
+* PHP 7 - Anonymous Classes
+
+Anonymous classes can now be defined using new class. Anonymous class can be used in place of a full class definition.   
+
+new class implements interfaceName
+
+
+
+
+
